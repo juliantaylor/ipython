@@ -4,7 +4,6 @@ _ipython_get_flags()
 {
     local url=$1
     local var=$2
-    local dash=$3
     if [[ "$url $var" == $__ipython_complete_last ]]; then
         opts=$__ipython_complete_last_res
         return
@@ -20,11 +19,12 @@ _ipython()
 {
     local cur=${COMP_WORDS[COMP_CWORD]}
     local prev=${COMP_WORDS[COMP_CWORD - 1]}
-    local subcommands="notebook qtconsole console kernel profile locate"
+    local t=$'\t'
+    local subcommands="notebook ${t}qtconsole ${t}console ${t}kernel ${t}profile ${t}locate "
     local opts=""
     if [ -z "$__ipython_complete_baseopts" ]; then
         _ipython_get_flags baseopts
-        __ipython_complete_baseopts="${opts}"
+        __ipython_complete_baseopts="${opts}${t}--help ${t}--help-all "
     fi
     local baseopts="$__ipython_complete_baseopts"
     local mode=""
@@ -40,8 +40,8 @@ _ipython()
     done
 
     if [[ $mode == "profile" ]]; then
-        opts="list create"
-        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        local IFS=$'\t\n'
+        COMPREPLY=( $(compgen -W "list${t}create " -- ${cur}) )
     elif [[ ${cur} == -* ]]; then
         if [[ $mode == "notebook" ]]; then
             _ipython_get_flags notebook
@@ -96,6 +96,7 @@ EOF
         COMPREPLY=( $(compgen -W "${__ipython_complete_profiles}" -- ${cur}) )
     else
         if [ -z "$mode" ]; then
+            local IFS=$'\t\n'
             COMPREPLY=( $(compgen -f -W "${subcommands}" -- ${cur}) )
         else
             COMPREPLY=( $(compgen -f -- ${cur}) )
