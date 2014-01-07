@@ -1,0 +1,462 @@
+/usr/lib/python3/dist-packages/matplotlib/__init__.py:1174: UserWarning:  This call to matplotlib.use() has no effect
+because the backend has already been chosen;
+matplotlib.use() must be called *before* pylab, matplotlib.pyplot,
+or matplotlib.backends is imported for the first time.
+
+  warnings.warn(_use_error_msg)
+/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/frontend.py:30: UserWarning: The top-level `frontend` package has been deprecated. All its subpackages have been moved to the top `IPython` level.
+  warn("The top-level `frontend` package has been deprecated. "
+.............................................................................................................................................................................................................................................................S.........S................................................................................................................................................F.Fontconfig warning: ignoring C.UTF-8: not a valid language tag
+E..........................................E............................................S.............................................................S.................................................................................................E..............................................................................................E.E..............................................S....S....S..S................F...FFF...F.F..........................K..........K...S.................EEE..................EEE.S.............................................................................................S........SSS...S................S.F............S..S.......E................................................S.........S.............................................................................S..S......................S..
+======================================================================
+ERROR: IPython.core.tests.test_pylabtools.test_figure_to_svg
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/matplotlib/backends/tkagg.py", line 13, in blit
+    tk.call("PyAggImagePhoto", photoimage, id(aggimage), colormode, id(bbox_array))
+_tkinter.TclError: invalid command name "PyAggImagePhoto"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/nose/case.py", line 198, in runTest
+    self.test(*self.arg)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/core/tests/test_pylabtools.py", line 52, in test_figure_to_svg
+    plt.draw()
+  File "/usr/lib/python3/dist-packages/matplotlib/pyplot.py", line 555, in draw
+    get_current_fig_manager().canvas.draw()
+  File "/usr/lib/python3/dist-packages/matplotlib/backends/backend_tkagg.py", line 349, in draw
+    tkagg.blit(self._tkphoto, self.renderer._renderer, colormode=2)
+  File "/usr/lib/python3/dist-packages/matplotlib/backends/tkagg.py", line 20, in blit
+    tk.call("PyAggImagePhoto", photoimage, id(aggimage), colormode, id(bbox_array))
+_tkinter.TclError
+
+======================================================================
+ERROR: Failure: AttributeError ('NoneType' object has no attribute 'loader')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/nose/failure.py", line 38, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/usr/lib/python3/dist-packages/nose/loader.py", line 413, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/usr/lib/python3/dist-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/usr/lib/python3/dist-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/lib/python3.4/imp.py", line 235, in load_module
+    return load_source(name, filename, file)
+  File "/usr/lib/python3.4/imp.py", line 175, in load_source
+    module.__spec__.loader = module.__loader__
+AttributeError: 'NoneType' object has no attribute 'loader'
+
+======================================================================
+ERROR: test_abort (IPython.parallel.tests.test_asyncresult.AsyncResultTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/tests/clienttest.py", line 179, in tearDown
+    BaseZMQTestCase.tearDown(self)
+  File "/usr/lib/python3/dist-packages/zmq/tests/__init__.py", line 108, in tearDown
+    raise RuntimeError("context could not terminate, open sockets likely remain in test")
+RuntimeError: context could not terminate, open sockets likely remain in test
+
+======================================================================
+ERROR: test_require_function (IPython.parallel.tests.test_dependency.DependencyTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/tests/test_dependency.py", line 125, in test_require_function
+    ar = self.view.apply_async(bar2, 5)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/client/view.py", line 238, in apply_async
+    return self._really_apply(f, args, kwargs, block=False)
+  File "<string>", line 2, in _really_apply
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/client/view.py", line 63, in sync_results
+    ret = f(self, *args, **kwargs)
+  File "<string>", line 2, in _really_apply
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/client/view.py", line 48, in save_ids
+    ret = f(self, *args, **kwargs)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/client/view.py", line 1041, in _really_apply
+    metadata=metadata)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/client/client.py", line 1243, in send_apply_request
+    raise TypeError("f must be callable, not %s"%type(f))
+TypeError: f must be callable, not <class 'IPython.parallel.controller.dependency.dependent'>
+
+======================================================================
+ERROR: test_require_object (IPython.parallel.tests.test_dependency.DependencyTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/tests/test_dependency.py", line 135, in test_require_object
+    ar = self.view.apply_async(bar, 5)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/client/view.py", line 238, in apply_async
+    return self._really_apply(f, args, kwargs, block=False)
+  File "<string>", line 2, in _really_apply
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/client/view.py", line 63, in sync_results
+    ret = f(self, *args, **kwargs)
+  File "<string>", line 2, in _really_apply
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/client/view.py", line 48, in save_ids
+    ret = f(self, *args, **kwargs)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/client/view.py", line 1041, in _really_apply
+    metadata=metadata)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/client/client.py", line 1243, in send_apply_request
+    raise TypeError("f must be callable, not %s"%type(f))
+TypeError: f must be callable, not <class 'IPython.parallel.controller.dependency.dependent'>
+
+======================================================================
+ERROR: Failure: ValueError (object must be a class or function)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/nose/failure.py", line 38, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/usr/lib/python3/dist-packages/nose/plugins/manager.py", line 154, in generate
+    for r in result:
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 675, in loadTestsFromModule
+    extraglobs=self.extraglobs)
+  File "/usr/lib/python3.4/doctest.py", line 928, in find
+    self._find(tests, obj, name, module, source_lines, globs, {})
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 130, in _find
+    source_lines, globs, seen)
+  File "/usr/lib/python3.4/doctest.py", line 984, in _find
+    globs, seen)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 130, in _find
+    source_lines, globs, seen)
+  File "/usr/lib/python3.4/doctest.py", line 1015, in _find
+    self._from_module(module, val)):
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 117, in _from_module
+    raise ValueError("object must be a class or function")
+ValueError: object must be a class or function
+
+======================================================================
+ERROR: Failure: ValueError (object must be a class or function)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/nose/failure.py", line 38, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/usr/lib/python3/dist-packages/nose/plugins/manager.py", line 154, in generate
+    for r in result:
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 675, in loadTestsFromModule
+    extraglobs=self.extraglobs)
+  File "/usr/lib/python3.4/doctest.py", line 928, in find
+    self._find(tests, obj, name, module, source_lines, globs, {})
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 130, in _find
+    source_lines, globs, seen)
+  File "/usr/lib/python3.4/doctest.py", line 984, in _find
+    globs, seen)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 130, in _find
+    source_lines, globs, seen)
+  File "/usr/lib/python3.4/doctest.py", line 1015, in _find
+    self._from_module(module, val)):
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 117, in _from_module
+    raise ValueError("object must be a class or function")
+ValueError: object must be a class or function
+
+======================================================================
+ERROR: Failure: ValueError (object must be a class or function)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/nose/failure.py", line 38, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/usr/lib/python3/dist-packages/nose/plugins/manager.py", line 154, in generate
+    for r in result:
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 675, in loadTestsFromModule
+    extraglobs=self.extraglobs)
+  File "/usr/lib/python3.4/doctest.py", line 928, in find
+    self._find(tests, obj, name, module, source_lines, globs, {})
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 130, in _find
+    source_lines, globs, seen)
+  File "/usr/lib/python3.4/doctest.py", line 984, in _find
+    globs, seen)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 130, in _find
+    source_lines, globs, seen)
+  File "/usr/lib/python3.4/doctest.py", line 1015, in _find
+    self._from_module(module, val)):
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 117, in _from_module
+    raise ValueError("object must be a class or function")
+ValueError: object must be a class or function
+
+======================================================================
+ERROR: Failure: ValueError (object must be a class or function)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/nose/failure.py", line 38, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/usr/lib/python3/dist-packages/nose/plugins/manager.py", line 154, in generate
+    for r in result:
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 675, in loadTestsFromModule
+    extraglobs=self.extraglobs)
+  File "/usr/lib/python3.4/doctest.py", line 928, in find
+    self._find(tests, obj, name, module, source_lines, globs, {})
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 130, in _find
+    source_lines, globs, seen)
+  File "/usr/lib/python3.4/doctest.py", line 984, in _find
+    globs, seen)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 130, in _find
+    source_lines, globs, seen)
+  File "/usr/lib/python3.4/doctest.py", line 1015, in _find
+    self._from_module(module, val)):
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/plugin/ipdoctest.py", line 117, in _from_module
+    raise ValueError("object must be a class or function")
+ValueError: object must be a class or function
+
+======================================================================
+ERROR: Failure: ImportError (No module named 'sphinx')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/nose/failure.py", line 38, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/usr/lib/python3/dist-packages/nose/loader.py", line 413, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/usr/lib/python3/dist-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/usr/lib/python3/dist-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/lib/python3.4/imp.py", line 235, in load_module
+    return load_source(name, filename, file)
+  File "/usr/lib/python3.4/imp.py", line 171, in load_source
+    module = methods.load()
+  File "<frozen importlib._bootstrap>", line 1229, in load
+  File "<frozen importlib._bootstrap>", line 1209, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1133, in _exec
+  File "<frozen importlib._bootstrap>", line 1436, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/sphinxext/ipython_console_highlighting.py", line 20, in <module>
+    from sphinx import highlighting
+ImportError: No module named 'sphinx'
+
+======================================================================
+ERROR: Failure: ImportError (No module named 'sphinx')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/nose/failure.py", line 38, in runTest
+    raise self.exc_val.with_traceback(self.tb)
+  File "/usr/lib/python3/dist-packages/nose/loader.py", line 413, in loadTestsFromName
+    addr.filename, addr.module)
+  File "/usr/lib/python3/dist-packages/nose/importer.py", line 47, in importFromPath
+    return self.importFromDir(dir_path, fqname)
+  File "/usr/lib/python3/dist-packages/nose/importer.py", line 94, in importFromDir
+    mod = load_module(part_fqname, fh, filename, desc)
+  File "/usr/lib/python3.4/imp.py", line 235, in load_module
+    return load_source(name, filename, file)
+  File "/usr/lib/python3.4/imp.py", line 171, in load_source
+    module = methods.load()
+  File "<frozen importlib._bootstrap>", line 1229, in load
+  File "<frozen importlib._bootstrap>", line 1209, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1133, in _exec
+  File "<frozen importlib._bootstrap>", line 1436, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/sphinxext/ipython_directive.py", line 75, in <module>
+    import sphinx
+ImportError: No module named 'sphinx'
+
+======================================================================
+ERROR: IPython.utils.tests.test_text.test_eval_formatter
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/nose/case.py", line 198, in runTest
+    self.test(*self.arg)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/utils/tests/test_text.py", line 115, in test_eval_formatter
+    eval_formatter_no_slicing_check(f)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/utils/tests/test_text.py", line 110, in eval_formatter_no_slicing_check
+    nt.assert_raises(SyntaxError, f.format, "{a[:]}")
+  File "/usr/lib/python3.4/unittest/case.py", line 701, in assertRaises
+    return context.handle('assertRaises', callableObj, args, kwargs)
+  File "/usr/lib/python3.4/unittest/case.py", line 161, in handle
+    callable_obj(*args, **kwargs)
+  File "/usr/lib/python3.4/string.py", line 164, in format
+    return self.vformat(format_string, args, kwargs)
+  File "/usr/lib/python3.4/string.py", line 168, in vformat
+    result = self._vformat(format_string, args, kwargs, used_args, 2)
+  File "/usr/lib/python3.4/string.py", line 190, in _vformat
+    obj, arg_used = self.get_field(field_name, args, kwargs)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/utils/text.py", line 509, in get_field
+    v = eval(name, kwargs)
+  File "<string>", line 1, in <module>
+NameError: name 'a' is not defined
+
+======================================================================
+FAIL: IPython.core.tests.test_pylabtools.TestPylabSwitch.test_qt
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/nose/case.py", line 198, in runTest
+    self.test(*self.arg)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/core/tests/test_pylabtools.py", line 96, in test_qt
+    nt.assert_equal(gui, 'qt')
+nose.proxy.AssertionError: 'tk' != 'qt'
+- tk
++ qt
+
+    """Fail immediately, with the given message."""
+>>  raise self.failureException("'tk' != 'qt'\n- tk\n+ qt\n")
+    
+
+======================================================================
+FAIL: test_autopx_blocking (IPython.parallel.tests.test_magics.TestParallelMagics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/tests/test_magics.py", line 257, in test_autopx_blocking
+    self.assertTrue('\nOut[' in output, output)
+nose.proxy.AssertionError: False is not true : %autopx enabled
+24690
+---------------------------------------------------------------------------
+ZeroDivisionError                         Traceback (most recent call last)<ipython-input-5-cae0d5b8337f> in <module>()
+----> 1 b/c
+ZeroDivisionError: division by zero
+%autopx disabled
+
+    'False is not true : %autopx enabled\n24690\n---------------------------------------------------------------------------\nZeroDivisionError                         Traceback (most recent call last)<ipython-input-5-cae0d5b8337f> in <module>()\n----> 1 b/c\nZeroDivisionError: division by zero\n%autopx disabled\n' = self._formatMessage('False is not true : %autopx enabled\n24690\n---------------------------------------------------------------------------\nZeroDivisionError                         Traceback (most recent call last)<ipython-input-5-cae0d5b8337f> in <module>()\n----> 1 b/c\nZeroDivisionError: division by zero\n%autopx disabled\n', "%s is not true" % safe_repr(False))
+>>  raise self.failureException('False is not true : %autopx enabled\n24690\n---------------------------------------------------------------------------\nZeroDivisionError                         Traceback (most recent call last)<ipython-input-5-cae0d5b8337f> in <module>()\n----> 1 b/c\nZeroDivisionError: division by zero\n%autopx disabled\n')
+    
+
+======================================================================
+FAIL: %%px --group-outputs=engine
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/tests/test_magics.py", line 125, in test_cellpx_groupby_engine
+    self.assertEqual(len(lines), len(expected), io.stdout)
+nose.proxy.AssertionError: 24 != 56 : [stdout:1] 
+stdout
+stdout2
+[stdout:2] 
+stdout
+stdout2
+[stdout:3] 
+stdout
+stdout2
+[stdout:4] 
+stdout
+stdout2
+[stdout:5] 
+stdout
+stdout2
+[stdout:6] 
+stdout
+stdout2
+[stdout:7] 
+stdout
+stdout2
+[stdout:8] 
+stdout
+stdout2
+
+    '24 != 56' = '%s != %s' % _common_shorten_repr(24, 56)
+    '24 != 56 : [stdout:1] \nstdout\nstdout2\n[stdout:2] \nstdout\nstdout2\n[stdout:3] \nstdout\nstdout2\n[stdout:4] \nstdout\nstdout2\n[stdout:5] \nstdout\nstdout2\n[stdout:6] \nstdout\nstdout2\n[stdout:7] \nstdout\nstdout2\n[stdout:8] \nstdout\nstdout2\n' = self._formatMessage('24 != 56 : [stdout:1] \nstdout\nstdout2\n[stdout:2] \nstdout\nstdout2\n[stdout:3] \nstdout\nstdout2\n[stdout:4] \nstdout\nstdout2\n[stdout:5] \nstdout\nstdout2\n[stdout:6] \nstdout\nstdout2\n[stdout:7] \nstdout\nstdout2\n[stdout:8] \nstdout\nstdout2\n', '24 != 56')
+>>  raise self.failureException('24 != 56 : [stdout:1] \nstdout\nstdout2\n[stdout:2] \nstdout\nstdout2\n[stdout:3] \nstdout\nstdout2\n[stdout:4] \nstdout\nstdout2\n[stdout:5] \nstdout\nstdout2\n[stdout:6] \nstdout\nstdout2\n[stdout:7] \nstdout\nstdout2\n[stdout:8] \nstdout\nstdout2\n')
+    
+
+======================================================================
+FAIL: %%px --group-outputs=order
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/tests/test_magics.py", line 167, in test_cellpx_groupby_order
+    self.assertEqual(len(lines), len(expected), io.stdout)
+nose.proxy.AssertionError: 24 != 64 : [stdout:1] 
+stdout
+stdout2
+[stdout:2] 
+stdout
+stdout2
+[stdout:3] 
+stdout
+stdout2
+[stdout:4] 
+stdout
+stdout2
+[stdout:5] 
+stdout
+stdout2
+[stdout:6] 
+stdout
+stdout2
+[stdout:7] 
+stdout
+stdout2
+[stdout:8] 
+stdout
+stdout2
+
+    '24 != 64' = '%s != %s' % _common_shorten_repr(24, 64)
+    '24 != 64 : [stdout:1] \nstdout\nstdout2\n[stdout:2] \nstdout\nstdout2\n[stdout:3] \nstdout\nstdout2\n[stdout:4] \nstdout\nstdout2\n[stdout:5] \nstdout\nstdout2\n[stdout:6] \nstdout\nstdout2\n[stdout:7] \nstdout\nstdout2\n[stdout:8] \nstdout\nstdout2\n' = self._formatMessage('24 != 64 : [stdout:1] \nstdout\nstdout2\n[stdout:2] \nstdout\nstdout2\n[stdout:3] \nstdout\nstdout2\n[stdout:4] \nstdout\nstdout2\n[stdout:5] \nstdout\nstdout2\n[stdout:6] \nstdout\nstdout2\n[stdout:7] \nstdout\nstdout2\n[stdout:8] \nstdout\nstdout2\n', '24 != 64')
+>>  raise self.failureException('24 != 64 : [stdout:1] \nstdout\nstdout2\n[stdout:2] \nstdout\nstdout2\n[stdout:3] \nstdout\nstdout2\n[stdout:4] \nstdout\nstdout2\n[stdout:5] \nstdout\nstdout2\n[stdout:6] \nstdout\nstdout2\n[stdout:7] \nstdout\nstdout2\n[stdout:8] \nstdout\nstdout2\n')
+    
+
+======================================================================
+FAIL: %%px --group-outputs=type
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/tests/test_magics.py", line 206, in test_cellpx_groupby_type
+    self.assertEqual(len(lines), len(expected), io.stdout)
+nose.proxy.AssertionError: 24 != 56 : [stdout:1] 
+stdout
+stdout2
+[stdout:2] 
+stdout
+stdout2
+[stdout:3] 
+stdout
+stdout2
+[stdout:4] 
+stdout
+stdout2
+[stdout:5] 
+stdout
+stdout2
+[stdout:6] 
+stdout
+stdout2
+[stdout:7] 
+stdout
+stdout2
+[stdout:8] 
+stdout
+stdout2
+
+    '24 != 56' = '%s != %s' % _common_shorten_repr(24, 56)
+    '24 != 56 : [stdout:1] \nstdout\nstdout2\n[stdout:2] \nstdout\nstdout2\n[stdout:3] \nstdout\nstdout2\n[stdout:4] \nstdout\nstdout2\n[stdout:5] \nstdout\nstdout2\n[stdout:6] \nstdout\nstdout2\n[stdout:7] \nstdout\nstdout2\n[stdout:8] \nstdout\nstdout2\n' = self._formatMessage('24 != 56 : [stdout:1] \nstdout\nstdout2\n[stdout:2] \nstdout\nstdout2\n[stdout:3] \nstdout\nstdout2\n[stdout:4] \nstdout\nstdout2\n[stdout:5] \nstdout\nstdout2\n[stdout:6] \nstdout\nstdout2\n[stdout:7] \nstdout\nstdout2\n[stdout:8] \nstdout\nstdout2\n', '24 != 56')
+>>  raise self.failureException('24 != 56 : [stdout:1] \nstdout\nstdout2\n[stdout:2] \nstdout\nstdout2\n[stdout:3] \nstdout\nstdout2\n[stdout:4] \nstdout\nstdout2\n[stdout:5] \nstdout\nstdout2\n[stdout:6] \nstdout\nstdout2\n[stdout:7] \nstdout\nstdout2\n[stdout:8] \nstdout\nstdout2\n')
+    
+
+======================================================================
+FAIL: %pylab works on engines
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/decorators.py", line 223, in skipper_func
+    return f(*args, **kwargs)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/tests/test_magics.py", line 324, in test_px_pylab
+    self.assertTrue('Out[' in io.stdout, io.stdout)
+nose.proxy.AssertionError: False is not true : 
+    'False is not true : ' = self._formatMessage('False is not true : ', "%s is not true" % safe_repr(False))
+>>  raise self.failureException('False is not true : ')
+    
+
+======================================================================
+FAIL: test_result (IPython.parallel.tests.test_magics.TestParallelMagics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/parallel/tests/test_magics.py", line 306, in test_result
+    self.assertTrue(str(data[name]) in output, msg)
+nose.proxy.AssertionError: False is not true : expected %pxresult output to include 111, but got: 
+    'False is not true : expected %pxresult output to include 111, but got: ' = self._formatMessage('False is not true : expected %pxresult output to include 111, but got: ', "%s is not true" % safe_repr(False))
+>>  raise self.failureException('False is not true : expected %pxresult output to include 111, but got: ')
+    
+
+======================================================================
+FAIL: IPython.utils.tests.test_path.test_not_writable_ipdir
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/nose/case.py", line 198, in runTest
+    self.test(*self.arg)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/decorators.py", line 223, in skipper_func
+    return f(*args, **kwargs)
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/utils/tests/test_path.py", line 446, in test_not_writable_ipdir
+    ipdir = path.get_ipython_dir()
+  File "/local/lib/python3.4/site-packages/ipython-1.1.1_dev-py3.4.egg/IPython/testing/tools.py", line 368, in __exit__
+    assert s in printed, notprinted_msg.format(s, self.channel, printed)
+nose.proxy.AssertionError: Did not find 'is not a writable location' in printed output (on stderr):
+-------
+
+-------
+
+>>  assert 'is not a writable location' in '', 'Did not find {0!r} in printed output (on {1}):\n-------\n{2!s}\n-------\n'.format('is not a writable location', <IPython.testing.tools.AssertPrints object at 0x7f0b0e67d6a0>.channel, '')
+    
+
+----------------------------------------------------------------------
+Ran 1247 tests in 199.937s
+
+FAILED (KNOWNFAIL=2, SKIP=23, errors=12, failures=8)
